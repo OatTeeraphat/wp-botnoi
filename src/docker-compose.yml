@@ -1,0 +1,52 @@
+version: '2'
+services:
+
+  php:
+      image: php:7.2-fpm
+      container_name: web_php-fpm
+      restart: always
+      build : ./
+      volumes:
+        - ./www/:/var/www/
+      depends_on:
+        - db
+      expose:
+        - 9000
+
+  db:
+      image: mariadb:latest
+      container_name: web_mysql
+      restart: always
+      volumes:
+        - ./etc/mysql/data/:/var/lib/mysql
+      env_file:
+        - ./etc/env/mariadb.env
+      ports:
+        - 3306:3306
+
+
+  pma:
+      image: phpmyadmin/phpmyadmin
+      container_name: web_phpmyadmin
+      restart: always
+      env_file:
+          - ./etc/env/pma.env
+      depends_on:
+        - nginx
+      expose:
+        - 80
+
+        
+  nginx:
+      image: nginx:alpine
+      container_name: web_nginx
+      restart: always
+      volumes:
+        - ./etc/nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+        - ./etc/nginx/conf.d:/etc/nginx/conf.d:ro
+        - ./www/:/var/www/
+      env_file:
+        - ./etc/env/nginx.env
+      expose:
+        - 80
+    
