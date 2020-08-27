@@ -34,7 +34,7 @@ services:
       depends_on:
         - nginx
       expose:
-        - 8080
+        - 80
 
         
   nginx:
@@ -56,3 +56,5 @@ services:
 networks:
   default:
   webproxy:
+    external:
+      name: webproxy
