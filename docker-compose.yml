@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     env_file:
-      - .src/etc/env/nginx.env
+      - /src/etc/env/nginx.env
     volumes:
       - vhost:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
