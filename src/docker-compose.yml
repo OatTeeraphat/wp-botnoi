@@ -45,8 +45,16 @@ services:
         - ./etc/nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
         - ./etc/nginx/conf.d:/etc/nginx/conf.d:ro
         - ./www/:/var/www/
+      networks:
+        - webproxy
+        - default
       env_file:
         - ./etc/env/nginx.env
       expose:
         - 80
-    
+
+networks:
+  default:
+    external:
+      name:
+        webproxy
