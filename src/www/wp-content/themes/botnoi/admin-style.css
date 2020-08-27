@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body#tinymce.page-template-page-home, 
+body#tinymce.page-template-page-datasci,
+body#tinymce.page-template-page-chatbot,
+body#tinymce.page-template-page-case_studies
+{
+    margin: 0;
+    color: #fff;
+    background-color: #323c4c;
+    font-family: 'Noto Sans', sans-serif;
+    background-repeat: repeat;
+    background-size: 100% auto;
+    padding: 30px;
+}
+
+body#tinymce.page-template-page-home h1, 
+body#tinymce.page-template-page-datasci h1,
+body#tinymce.page-template-page-chatbot h1,
+body#tinymce.page-template-page-case_studies h1
+{
+	font-size: 2.4em;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.125em;
+    
+}
+
+body#tinymce.page-template-page-home h1 strong, 
+body#tinymce.page-template-page-datasci h1 strong
+body#tinymce.page-template-page-chatbot h1 strong,
+body#tinymce.page-template-page-case_studies h1 strong
+{
+    font-size: 1.25em;
+}
+
+body#tinymce.page-template-page-home h1 span,
+body#tinymce.page-template-page-datasci h1 span,
+body#tinymce.page-template-page-chatbot h1 span,
+body#tinymce.page-template-page-case_studies h1 span
+{
+    display: block;
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+body#tinymce.page-template-page-home h1 strong span,
+body#tinymce.page-template-page-datasci h1 strong span,
+body#tinymce.page-template-page-chatbot h1 strong span,
+body#tinymce.page-template-page-case_studies h1 strong span
+{
+	display: inline;
+	font-weight: inherit;
+	font-size: 1em;
+}
+
+
+body#tinymce.page-template-page-home p,
+body#tinymce.page-template-page-datasci p,
+body#tinymce.page-template-page-chatbot p,
+body#tinymce.page-template-page-case_studies p
+{
+    color: #fff;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 30px;
+    margin : 2.25em 0 0.7em;
+}
