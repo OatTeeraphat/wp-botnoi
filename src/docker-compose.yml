@@ -55,6 +55,4 @@ services:
 
 networks:
   default:
-    external:
-      name:
-        webproxy
+  webproxy:
