@@ -32,19 +32,19 @@
 							<h3 class="mb-4"><strong>Address</strong></h3>
 							<address>
 								Botnoi Consulting Co., Ltd.<br>
-								253 Asok Montri Rd., 29th Floor<br>
+								253 Asok Montri Rd., 16th Floor<br>
 								Klongtoey Nue, Wattana, Bangkok 10110<br>
 								<br>
-								<span class="text-gradient-blue"><i class="phone-cell"></i>&nbsp;&nbsp;02-4957504</span>
+								<span class="text-gradient-blue"><i class="phone-cell"></i>&nbsp;&nbsp;061-820-1998, 085-516-9295, 081-375-3733</span>
 							</address>
 
 							<br>
 							<br>
 
 							<span>
-								<a href="#" class="footer_social"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-fb.png" alt=""></a>
-								<a href="#" class="footer_social"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-line.png" alt=""></a>
-								<a href="#" class="footer_social"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-youtube.png" alt=""></a>
+								<a href="https://fb.com/botnoigroup" target="_blank" class="footer_social"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-fb.png" alt=""></a>
+								<a href="#" class="footer_social d-none"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-line.png" alt=""></a>
+								<a href="#" class="footer_social d-none"><img src="<?php echo get_template_directory_uri(); ?>/src/images/botnoi_social-youtube.png" alt=""></a>
 							</span>
 													
 						</div>

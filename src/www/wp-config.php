@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+/** FTP */
+define('FS_METHOD', 'direct');
+
 /** SSL */  
 define( 'FORCE_SSL_ADMIN', true );  
 // in some setups HTTP_X_FORWARDED_PROTO might contain  
