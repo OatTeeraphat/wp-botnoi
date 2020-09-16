@@ -17,6 +17,7 @@
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="google-site-verification" content="DrGjVxDoayXfOzjV7ZWyVeYdOVqXaTutf9fWo8QjOtY" />
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -62,8 +63,8 @@
 					<li class="nav-item <?php if (get_post(get_the_ID())->post_name == "chatbot") { echo "active"; } ;?>">
 						<a class="btn nav-link" href="<?php echo get_site_url(); ?>/chatbot">Chatbot <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item <?php if (get_post(get_the_ID())->post_name == "ai-data-service") { echo "active"; } ;?>">
-						<a class="btn nav-link" href="<?php echo get_site_url(); ?>/ai-data-service">Datasience and AI</a>
+					<li class="nav-item <?php if (get_post(get_the_ID())->post_name == "service") { echo "active"; } ;?>">
+						<a class="btn nav-link" href="<?php echo get_site_url(); ?>/service">AI & Data Science</a>
 					</li>
 					<li class="nav-item <?php if (get_post(get_the_ID())->post_name == "case-studies") { echo "active"; } ;?>">
 						<a class="btn nav-link" href="<?php echo get_site_url(); ?>/case-studies">Case Studies</a>
@@ -72,7 +73,7 @@
 						<a class="btn nav-link" href="#" tabindex="-1" aria-disabled="true"><strong>EN</strong></a>
 					</li>
 					<li class="nav-item d-none d-lg-flex">
-						<a class="btn btn-primary text-dark" href="#" role="button">Get Start</a>
+						<a class="btn btn-primary text-dark" href="#" role="button">Get Started</a>
 					</li>
 				</ul>
 			</div>

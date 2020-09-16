@@ -11,8 +11,9 @@
     $case_response = json_decode($case_response, true);
     
     $our_client = get_field('home_our_client');
-    
+	$our_partner = get_field('home_our_partner');
 
+    
 ?>
 
         <!-- Hero -->
@@ -35,6 +36,7 @@
                 </div>
 
             </div>
+
             
         </section>
         <!-- .Hero -->
@@ -96,7 +98,7 @@
 
                 <div class="row text-white justify-content-center">
                     <h2>
-                        Link to Blogs/Article
+                        Our Highlights
                     </h2>
                 </div>
     
@@ -146,7 +148,8 @@
         <section class="home_partner">
 
             <div class="container">
-
+				
+				<?php if( $our_partner ):?>
                 <div class="row text-white justify-content-center">
                     <h2>
                         PARTNERS
@@ -154,18 +157,13 @@
                 </div>
 
                 <div class="row mb-4 justify-content-around home_partner-logo">
-                    
-                    <div class="col-5 mb-5 col-md-2 px-4 d-flex align-items-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/mockup/mock-hbot.png" alt="">
-                    </div>
-                    <div class="col-9 mb-5 col-md-4 px-3 d-flex align-items-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/mockup/mock-microsoft.png" alt="">
-                    </div>
-                    <div class="col-4 mb-3 col-md-2 px-4 d-flex align-items-center">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/mockup/mock-line.png" alt="">
-                    </div>
-
+                    <?php foreach( $our_partner as $partner ):?>
+						<div class="col-5 mb-5 col-md-3 px-4 d-flex align-items-center">
+							<img src="<?php echo $partner['sizes']['medium']?>" alt="">
+						</div>
+					<?php endforeach;?>
                 </div>
+				<?php endif; ?>
 
                 <div class="row mb-4 text-white justify-content-center">
                     <h4>
@@ -178,19 +176,45 @@
                 if( $our_client ):
                 ?>
 
-                <div class="row justify-content-around">
-                    
-                <?php foreach( $our_client as $image ):?>
-
-                    <div class="col-6 col-md-3">
-                        <div class="home_partner-client">
-                            <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="">
-                        </div>
-                    </div>
-
-                <?php endforeach;?>
-
-                </div>
+                
+					
+					<?php if (wp_is_mobile()) : ?>
+				
+					<div class="row justify-content-center owl-carousel img-carousel2 m-0">
+						
+						<?php $card_per_page = 3;?>
+						<?php for ($i = 0; $i <= floor(count($our_client)/$card_per_page); $i++) :?>
+							<div class="col-12">
+								<div class="row justify-content-center">
+									<?php for ($j = 0; $j <= $card_per_page - 1; $j++) :
+									$card_page = $card_per_page * $i;
+									$_img = esc_url($our_client[$card_page + $j]['sizes']['medium']);
+									?>
+									<div class="col-12 px-3 img-carousel-item">
+										<div class='home_partner-client <?php echo empty($_img) ? "opacity-0" : ""; ?>'>
+											<img src="<?php echo $_img; ?>" alt="">
+										</div>
+									</div>
+									<?php endfor;?>
+								</div>
+							</div>
+						<?php endfor;?>
+						
+					</div>
+				
+					<?php else :?>
+				
+					<div class="row justify-content-around">
+						<?php foreach( $our_client as $image ):?>
+							<div class="col-6 col-md-3">
+								<div class="home_partner-client">
+									<img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="">
+								</div>
+							</div>
+						<?php endforeach;?>
+					</div>
+				
+					<?php endif; ?>                
                 
                 <?php endif; ?>
 
@@ -209,7 +233,7 @@
 
                 <div class="row text-white justify-content-center">
                     <h2>
-                        Lasted News
+                        Latest Articles
                     </h2>
                 </div>
 
@@ -253,8 +277,8 @@
         <!-- .News -->
 
         <script>
-        $(document).ready(function(){
-            $('.img-carousel').owlCarousel({
+        jQuery(document).ready(function(){
+            jQuery('.img-carousel').owlCarousel({
                 items: 3,
                 loop: true,
                 autoplay: true,
@@ -263,6 +287,21 @@
                 responsive:{
                     0   : { items: 1 },
                     600 : { items: 3 }
+                }
+            });
+        })
+			
+		jQuery(document).ready(function(){
+            jQuery('.img-carousel2').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                dots: true,
+                nav: false,
+				responsive:{
+                    0   : { items: 1 },
+                    600 : { items: 2 },
+					1200 : { items: 3 }
                 }
             });
         })

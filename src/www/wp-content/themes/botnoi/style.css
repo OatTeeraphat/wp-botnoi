@@ -31,7 +31,8 @@ body {
     background-image: url('./src/images/botnoi_wave-star-top.png');
     background-position: center top, center top, bottom center;
     background-repeat: repeat;
-    background-size: 100% auto;
+    background-size: 175% auto;
+    font-size : 0.95em;
 }
 
 section {
@@ -123,6 +124,10 @@ textarea{
     color: #fff;
 }
 
+.opacity-0{
+	opacity : 0!important;
+}
+
 
 .card{
     font-size: 1em;
@@ -133,7 +138,7 @@ textarea{
     text-align: center;
     color: #fff;
     background-image: linear-gradient(180deg, #5B6370 0%, #323C4C 61.7%);
-    box-shadow: 0px 3px 30px #282E36;
+    box-shadow: 0px 3px 10px #282E36;
     border-radius: 29px;
     position: relative;
     border: none;
@@ -402,8 +407,8 @@ ul .nav-item:last-child {
 }
 
 .home_news-card{
-    padding-top: 220px;
-    background-size: 150%;
+    padding-top: 180px;
+    background-size: 120%;
     background-position: top center;
 }
 
@@ -642,14 +647,18 @@ section.case_study_use_case + section.case_study_use_case {
 .img-carousel button:focus{
     outline: none;
 }
-.img-carousel .owl-dots{
+.img-carousel .owl-dots,
+.img-carousel2 .owl-dots
+{
     position: absolute;
     bottom: -50px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.img-carousel .owl-dot{
+
+.img-carousel .owl-dot,
+.img-carousel2 .owl-dot{
     display: block;
     width: 10px;
     height: 10px;
@@ -658,7 +667,8 @@ section.case_study_use_case + section.case_study_use_case {
     margin: 10px;
     outline: none;
 }
-.img-carousel .owl-dot.active{
+.img-carousel .owl-dot.active,
+.img-carousel2 .owl-dot.active{
     background-color: #17dbf8 !important;
 }
 
@@ -670,7 +680,8 @@ section.case_study_use_case + section.case_study_use_case {
         padding-bottom: 75px;
     }
     .home_hero{
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
+        padding-bottom: 75px !important;
     }
     .home_service-card{
         min-height: 410px;
@@ -741,7 +752,10 @@ section.case_study_use_case + section.case_study_use_case {
 
 /* iPhone 11 Pro Max */
 @media (max-width: 768px) { 
-
+	
+	.home_hero{
+		text-align : center;
+	}
     .home_hilight-card {
         padding-top: 180px;
         background-size: 150% auto;
@@ -761,7 +775,7 @@ section.case_study_use_case + section.case_study_use_case {
 @media (max-width: 576px) { 
 
     section {
-        padding-bottom: 75px;
+        padding-bottom: 135px;
     }
     .warpper{
         background-size: 185% auto;
@@ -813,4 +827,51 @@ section.case_study_use_case + section.case_study_use_case {
 
 }
 
+/* edit from admin */
+.nf-form-fields-required, .nf-field-label
+{
+	display:none;
+}
 
+.nf-form-content .list-select-wrap .nf-field-element>div,
+.nf-form-content input:not([type=button]),
+.nf-form-content textarea
+{
+	background: #5B6370 !important;
+	border-radius: 10px !important;
+	border-width : 0px !important;
+	color : #fff !important;
+}
+.nf-form-content .list-select-wrap .nf-field-element>div::placeholder,
+.nf-form-content input:not([type=button])::placeholder,
+.nf-form-content textarea::placeholder
+{
+	color : #fff !important;
+	letter-spacing : 0.75px
+}
+.nf-error.field-wrap .nf-field-element:after
+{
+	background-color : transparent !important;
+	color : #e80000 !important;
+}
+.nf-form-content button,
+.nf-form-content input[type=button],
+.nf-form-content input[type=submit]
+{
+	border-radius: 10px;
+	min-width : 100px !important;
+    border-width: 0 !important;
+    background-image: linear-gradient(to top, #19bff3, #14fffe) !important;
+    color: #333c4c !important;
+}
+.nf-pass.field-wrap .nf-field-element:after
+{
+	color : #fff !important
+}
+.nf-response-msg h4
+{
+	margin-bottom: 5px;
+    font-size: 1.3em;
+	font-weight: 600;
+    color: #19f5fd;
+}

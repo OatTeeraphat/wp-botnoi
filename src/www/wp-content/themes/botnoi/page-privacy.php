@@ -14,10 +14,13 @@
 		
 		<div class="row my-5">
 			<div class="col">
-				<?php the_field('privacy_content'); ?>
+				<?php the_content(); ?>
 			</div>
 		</div>
-
+		
+		<!--<div class="row my-5">
+			<?php //echo do_shortcode( "[ninja_form id='2']" );?>
+		</div> -->
 		
 	</div>
 	<style>

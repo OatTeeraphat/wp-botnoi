@@ -35,7 +35,7 @@
 								253 Asok Montri Rd., 16th Floor<br>
 								Klongtoey Nue, Wattana, Bangkok 10110<br>
 								<br>
-								<span class="text-gradient-blue"><i class="phone-cell"></i>&nbsp;&nbsp;061-820-1998, 085-516-9295, 081-375-3733</span>
+								<span class="text-gradient-blue"><i class="phone-cell"></i>&nbsp;&nbsp;061-820-1998, 085-516-9295,<br>081-375-3733</span>
 							</address>
 
 							<br>
@@ -49,8 +49,8 @@
 													
 						</div>
 						<div class="col-12 col-md-6 order-1 order-md-2 mb-5">
-
-							<form>
+							<?php echo do_shortcode( '[ninja_form id=2]' ); ?>
+							<form class="d-none">
 
 								<div class="form-group pb-3">
 									<input type="text" class="form-control" placeholder="NAME">

@@ -192,8 +192,8 @@
 
 
         <script>
-        $(document).ready(function(){
-            $('.img-carousel').owlCarousel({
+        jQuery(document).ready(function(){
+            jQuery('.img-carousel').owlCarousel({
                 items: 1,
                 loop: true,
                 autoplay: true,
