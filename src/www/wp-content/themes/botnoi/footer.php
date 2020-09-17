@@ -15,7 +15,7 @@
 
 			<div id="contact" style="position: relative; top: -90px;"></div>
 
-			<footer class="footer mt-4 px-3 px-md-0" id="footer" style="background-image : url('<?php echo get_template_directory_uri(); ?>/src/images/botnoi_footer-wave.png')">
+			<footer class="footer mt-4 px-2 px-md-0" id="footer" style="background-image : url('<?php echo get_template_directory_uri(); ?>/src/images/botnoi_footer-wave.png')">
 
 				<div class="container">
 
@@ -113,6 +113,12 @@
 				}
 
 			});
+			
+			$('.navbar-toggler').click(function(){
+				$('.navbar').toggleClass("navbar-color");
+			})
+			
+			
 
 			$('.go-top').click(function(){
 

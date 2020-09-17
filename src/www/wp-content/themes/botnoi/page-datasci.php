@@ -59,15 +59,15 @@
                 </div>
 
                 <div class="row mb-5">
-                    <div class="col-12 mb-5">
+                    <div class="col-12 mb-5 text-center tetxt-md-left">
                         <h4>
                             <strong>AI SOLUTION</strong>
                         </h4>
                     </div>
 
                     <div class="col-12">
-                        <div class="row">
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                        <div class="row justify-content-center">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/monitoring.png" />
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/chat_content_management.png" />
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/margeting_segment.png" />
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/leads.png" />
@@ -104,15 +104,15 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 mb-5">
+                    <div class="col-12 mb-5 text-center tetxt-md-left">
                         <h4>
                             <strong>DATA SERVICES</strong>
                         </h4>
                     </div>
 
                     <div class="col-12">
-                        <div class="row">
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                        <div class="row justify-content-center">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/live_chat.png" />
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/api_integration.png" />
@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/report.png" />
@@ -136,7 +136,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-lg-3 col-md-4 mb-3">
+                            <div class="col-8 col-md-3 mb-4 mb-md-3">
                                 <div class="square-box-container">
                                     <div class="square-box-content rounded card-gradient py-4 d-flex flex-column align-items-center justify-content-center">
                                         <img style="max-width: 122px;" class="mb-4" src="<?php echo get_template_directory_uri(); ?>/src/images/report.png" />
@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center my-5">
-                    <div class="col-8 industry_content-container">
+                    <div class="col-11 col-md-8 industry_content-container">
                         <div class="owl-carousel img-carousel">
                         <?php 
                         foreach($product_slide as $slide) :
@@ -200,7 +200,7 @@
                 dots: true,
                 responsive:{
                     0   : { items: 1 },
-                    600 : { items: 3 }
+                    600 : { items: 1 }
                 }
             });
         })

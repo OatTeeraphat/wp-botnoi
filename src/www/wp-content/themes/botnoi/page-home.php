@@ -104,18 +104,19 @@
     
                 <div class="row justify-content-center">
                     
-                    <div class="col-12 col-md-10">
+                    <div class="col-12 col-md-12 px-0">
 
                         <div class="row owl-carousel img-carousel">
-
+				
                         <?php
-                        $post = array_slice($case_response['items'], 0, 6);
+                        //$post = array_slice($case_response['items'], 0, 6);
+                        $post = get_field('case_studies', 'option');
                         foreach ($post as $key => $value) :
+							//var_dump($value);
                         ?>  
                             <div class="col-12 mb-4 mb-md-0 img-carousel-item">
-
-                                <a href="<?php echo $value['link'];?>" class="line-none" target="_blank">
-                                    <div class="card card-gradient home_hilight-card" style="background-image: url('<?php echo $value['thumbnail']; ?>');">
+                                <a href="<?php echo $value['url'];?>" class="line-none" target="_blank">
+                                    <div class="card card-gradient mx-3 mx-md-0 home_hilight-card" style="background-image: url('<?php echo $value['img']['sizes']['medium_large']; ?>');">
                                         <div class="card-body">
                                             <p class="mb-5 home_hilight-title">
                                                 <?php echo $value['title']; ?>
@@ -150,21 +151,49 @@
             <div class="container">
 				
 				<?php if( $our_partner ):?>
-                <div class="row text-white justify-content-center">
-                    <h2>
-                        PARTNERS
-                    </h2>
-                </div>
+					<div class="row text-white justify-content-center ">
+						<h2>
+							PARTNERS
+						</h2>
+					</div>
+				
+					<?php if (wp_is_mobile()) : ?>
+					<div class="row justify-content-center mb-5 pb-5">
+						<div class="col-12 px-3 owl-carousel img-carousel2">
+						<?php $card_per_page = 3;?>
+						<?php for ($i = 0; $i <= floor(count($our_partner)/$card_per_page) - 1; $i++) :?>
+							<div class="row justify-content-center img-carousel-item">
+								<?php for ($j = 0; $j <= $card_per_page - 1; $j++) :
+								$card_page = $card_per_page * $i;
+								$_img_info = $our_partner[$card_page + $j];
+								$_img = esc_url($_img_info['sizes']['medium']);
+								?>
 
-                <div class="row mb-4 justify-content-around home_partner-logo">
-                    <?php foreach( $our_partner as $partner ):?>
-						<div class="col-5 mb-5 col-md-3 px-4 d-flex align-items-center">
-							<img src="<?php echo $partner['sizes']['medium']?>" alt="">
+									<div class="col-12 px-3 mb-4">
+										<div class='home_partner-list <?php echo empty($_img) ? "opacity-0" : ""; ?>'>
+											<img src="<?php echo $_img; ?>" alt="">
+										</div>
+									</div>
+
+								<?php endfor;?>
+							</div>
+						<?php endfor;?>
 						</div>
-					<?php endforeach;?>
-                </div>
+					</div>
+					<?php else: ?>
+					<div class="row mb-4 justify-content-around home_partner-logo">
+						<?php foreach( $our_partner as $partner ):?>
+							<div class="col-5 mb-5 col-md-3 px-4 d-flex align-items-center">
+								<img src="<?php echo $partner['sizes']['medium']?>" alt="">
+							</div>
+						<?php endforeach;?>
+							<div class="col-5 mb-5 col-md-3 px-4 d-flex align-items-center">
+								<img src="https://botnoigroup.com/wp-content/uploads/2020/09/hbot.png" alt="">
+							</div>
+					</div>
+					<?php endif; ?>
+				
 				<?php endif; ?>
-
                 <div class="row mb-4 text-white justify-content-center">
                     <h4>
                         <strong>CLIENTS</strong>
@@ -180,7 +209,7 @@
 					
 					<?php if (wp_is_mobile()) : ?>
 				
-					<div class="row justify-content-center owl-carousel img-carousel2 m-0">
+					<div class="row justify-content-center owl-carousel img-carousel3 m-0">
 						
 						<?php $card_per_page = 3;?>
 						<?php for ($i = 0; $i <= floor(count($our_client)/$card_per_page); $i++) :?>
@@ -293,6 +322,21 @@
 			
 		jQuery(document).ready(function(){
             jQuery('.img-carousel2').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                dots: true,
+                nav: false,
+				responsive:{
+                    0   : { items: 1 },
+                    600 : { items: 2 },
+					1200 : { items: 3 }
+                }
+            });
+        })
+		
+		jQuery(document).ready(function(){
+            jQuery('.img-carousel3').owlCarousel({
                 items: 1,
                 loop: true,
                 autoplay: true,

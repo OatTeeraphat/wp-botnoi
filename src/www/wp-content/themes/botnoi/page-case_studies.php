@@ -44,40 +44,60 @@
 
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-12@sm filters-group-wrap">
+                        <div class="col-11 col-md-12 filters-group-wrap">
                             <div class="filters-group">
                                 <div class="row justify-content-center mb-5 filter-options">
-                                    <button class="btn btn-white btn-hover-primary mb-3 mx-3 active" data-group="all">All Case</button>
-                                    <button class="btn btn-white btn-hover-primary mb-3 mx-3" data-group="machine-learning">AI & Matchine Learning</button>
-                                    <button class="btn btn-white btn-hover-primary mb-3 mx-3" data-group="botnoi">Chatbot</button>
-                                    <button class="btn btn-white btn-hover-primary mb-3 mx-3" data-group="data-analytics">Data Analytics</button>
+									<button class="btn btn-white btn-hover-primary mb-3 mx-3 active" data-group="all">
+										All Case
+									</button>
+									<?php
+									
+									$post = get_field('case_studies', 'option');
+									$terms = get_terms( array(
+										'taxonomy' => 'post_tag',
+										'hide_empty' => false,
+									) );
+									
+									foreach ($terms as $terms_key => $term) :
+									?>
+										<button class="btn btn-white btn-hover-primary mb-3 mx-3" data-group="<?php echo $term->name; ?>">
+											<?php echo $term->name; ?>
+										</button>
+									<?php 
+									endforeach;
+									?>
+									
                                 </div>
                             </div>
                         </div>
                     </div>
                     </div>
-                    <div id="grid" class="row my-shuffle-container">
+                    <div id="grid" class="row justify-content-center my-shuffle-container">
                         
                         <?php
-                        $post = array_slice($case_response['items'], 0, 6);
-                        foreach ($post as $key => $value) :
+                        //$post = array_slice($case_response['items'], 0, 6);
+						foreach ($post as $key => $value) :
+						
+						$tag = [];
+						$tag = array_map(function($x) {return $x->name;}, $value['tag']);
+						
                         ?> 
-
-                        <div class="col-12 col-lg-4 col-md-6 mb-5 picture-item" data-groups='<?php echo json_encode($value['categories'], JSON_UNESCAPED_UNICODE); ?>' data-date-created="<?php echo substr($value['pubDate'], 0, 9); ?>" data-title="Lake Walchen">
+						
+                        <div class="col-12 col-lg-4 col-md-6 mb-5 picture-item px-4 px-md-3" data-groups='<?php echo json_encode($tag, JSON_UNESCAPED_UNICODE); ?>' data-date-created="<?php echo substr($value['img']['date'], 0, 10); ?>" data-title="Lake Walchen">
                             <div class="card card-gradient">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-center align-items-center mb-3 card-banner rounded">
-                                        <img src="<?php echo $value['thumbnail'];?>" />
+                                        <img src="<?php echo $value['img']['sizes']['medium_large'];?>" />
                                     </div>
                                     <h3 class="mb-3">
                                         <?php echo $value['title']; ?>
                                     </h3>
                                     <p class="mb-3">
-                                        <?php echo substr(strip_tags($value['description']), 0, 500); ?>
+                                        <?php echo substr(strip_tags($value['desc']), 0, 500); ?>
                                         
                                     </p>
                                     <div class="card-button">
-                                        <a href="<?php echo $value['guid']; ?>" style="width: 100%;" class="btn btn-white btn-hover-primary">View more</a>
+                                        <a href="<?php echo $value['url']; ?>" style="width: 100%;" class="btn btn-white btn-hover-primary">View more</a>
                                     </div>
                                 </div>
                             </div>

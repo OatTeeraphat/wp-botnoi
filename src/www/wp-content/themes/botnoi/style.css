@@ -139,7 +139,7 @@ textarea{
     color: #fff;
     background-image: linear-gradient(180deg, #5B6370 0%, #323C4C 61.7%);
     box-shadow: 0px 3px 10px #282E36;
-    border-radius: 29px;
+    border-radius: 20px;
     position: relative;
     border: none;
 }
@@ -178,6 +178,13 @@ ul .nav-item:last-child {
     margin-right: 0;
 }
 
+.navbar:has(.navbar-collapse.collapse.show){
+	background-color: #333c4c!important;
+    box-shadow: 0px 5px 20px #00000040;
+    transition: all 0.33s ease;
+    z-index: 100000;
+}
+
 .navbar-nav .nav-link{
     color: #fff;
     padding: .275rem .5rem;
@@ -209,6 +216,9 @@ ul .nav-item:last-child {
     margin-right: 15px;
 }
 
+.navbar.navbar-color{
+	background-color: #333c4c!important;
+}
 
 .navbar.navbar-onscroll{
     background-color: #333c4c!important;
@@ -267,7 +277,7 @@ ul .nav-item:last-child {
 }
 
 .home_hero-content h1 strong{
-    font-size: 1.25em;
+    font-size: 1.375em;
 }
 
 .home_hero-content h1 strong span{
@@ -332,27 +342,27 @@ ul .nav-item:last-child {
 }
 
 .home_hilight-card{
-    padding-top: 260px;
-    background-size: 350% auto;
-	background-position: top center;
-	cursor: pointer;
+    padding-top: 75px;
+    background-size: 120% auto;
+    background-position: top center;
+    cursor: pointer;
 }
 
 .home_hilight-card .card-body{
-    background: linear-gradient(180deg, #5b637000 10%, #000000b0 60%);
-    border-radius: 0 0 28px 28px;
-    padding: 75px 0 15px;
+    background: linear-gradient(180deg, #5b637000 10%, #000000cf 60%);
+    border-radius: 0 0 19px 19px;
+    padding: 90px 0 0px;
 }
 
 .home_hilight-card .card-body p{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
-    height: 75px;
+    height: 60px;
     overflow: hidden;
-    line-height: 30px;
+    line-height: 22px;
     letter-spacing: 1px;
     padding: 15px;
-	margin-bottom: 0.8em !important;
+    margin-bottom: 0.8em !important;
 }
 
 .line-none , .line-none:hover{
@@ -362,7 +372,19 @@ ul .nav-item:last-child {
 .home_partner-logo img{
     width: 100%;
 }
-
+.home_partner-list{
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+}
+.home_partner-list img{
+    position: absolute;
+	height: 100% !important;
+    width: auto !important;
+}
 .home_partner-client{
     background-color: #fff;
     height: 100px;
@@ -378,8 +400,8 @@ ul .nav-item:last-child {
 
 .home_partner-client img{
     position: absolute;
-    height: 100%;
-    width: auto;
+    height: 100% !important;
+    width: auto !important;
 }
 
 .home_news{
@@ -618,6 +640,7 @@ section.case_study_use_case + section.case_study_use_case {
 }
 .img-carousel-item img{
     width: 100%;
+    border-radius: 20px;
 }
 .img-carousel .owl-nav{
     position: absolute;
@@ -648,17 +671,21 @@ section.case_study_use_case + section.case_study_use_case {
     outline: none;
 }
 .img-carousel .owl-dots,
-.img-carousel2 .owl-dots
+.img-carousel2 .owl-dots,
+.img-carousel3 .owl-dots
 {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: -50px;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
 }
 
 .img-carousel .owl-dot,
-.img-carousel2 .owl-dot{
+.img-carousel2 .owl-dot,
+.img-carousel3 .owl-dot{
     display: block;
     width: 10px;
     height: 10px;
@@ -668,7 +695,8 @@ section.case_study_use_case + section.case_study_use_case {
     outline: none;
 }
 .img-carousel .owl-dot.active,
-.img-carousel2 .owl-dot.active{
+.img-carousel2 .owl-dot.active,
+.img-carousel3 .owl-dot.active{
     background-color: #17dbf8 !important;
 }
 
@@ -708,7 +736,7 @@ section.case_study_use_case + section.case_study_use_case {
         padding-bottom: 75px;
     }
     section h2 {
-        margin-bottom: 45px;
+        margin-bottom: 30px;
     }
     .navbar-dark .navbar-toggler{
         border: none;
@@ -755,6 +783,7 @@ section.case_study_use_case + section.case_study_use_case {
 	
 	.home_hero{
 		text-align : center;
+		padding-bottom: 135px !important;
 	}
     .home_hilight-card {
         padding-top: 180px;
@@ -776,6 +805,7 @@ section.case_study_use_case + section.case_study_use_case {
 
     section {
         padding-bottom: 135px;
+        text-align: center;
     }
     .warpper{
         background-size: 185% auto;
@@ -786,7 +816,7 @@ section.case_study_use_case + section.case_study_use_case {
         font-size: 1em;
     }
     .home_hero-content h1{
-        font-size: 2.6em;
+        font-size: 2.3em;
     }
     .home_hero-content p{
         font-size: 1.1em;
@@ -816,7 +846,6 @@ section.case_study_use_case + section.case_study_use_case {
     }
 
     .img-carousel .owl-dots{
-        bottom: -15px;
     }
 
     .footer{
